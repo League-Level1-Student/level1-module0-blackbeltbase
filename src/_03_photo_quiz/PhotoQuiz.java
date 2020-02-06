@@ -26,10 +26,8 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address”
-		String uRL = "https://lh3.googleusercontent.com/proxy/dHc9qim7OcE9-QfkUBEGabX4RzpILV0DN3_DKtSTTcKZEiojyN3g1ONCu-z-zkujpapPDgJgyRHFDskS7M6EMsS2k0qD9-g";
-
+		String uRL = "https://www.thespruce.com/thmb/OZMhZeQtehT_XQrrP2kfoJqV_Nk=/960x0/filters:no_upscale():max_bytes(150000):strip_icc()/duck-big-bill-59ef8e5068e1a2001072c89e.jpg";
 		// 2. create a variable of type "Component" that will hold your image
-JLabel imageHolder = new JLabel();
 		// 3. use the "createImage()" method below to initialize your Component
 Component imageComponent = createImage(uRL);
 
@@ -53,17 +51,23 @@ else {
 quizWindow.remove(imageComponent);
 		// 10. find another image and create it (might take more than one line
 		// of code)
-
+String uRL2 = "https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg";
+Component imageComponent2 = createImage(uRL2);
 		// 11. add the second image to the quiz window
-
+quizWindow.add(imageComponent2);
 		// 12. pack the quiz window
-
+quizWindow.pack();
 		// 13. ask another question
-
+String question2 = JOptionPane.showInputDialog("What is the name of this animal?");
 		// 14+ check answer, say if correct or incorrect, etc.
+if(question2.equals("butterfly")) {
+	System.out.println("CORRECT");
+}
+else {
+	System.out.println("INCORRECT");
+}
 
 	}
-
 	private Component createImage(String imageUrl) throws MalformedURLException {
 		URL url = new URL(imageUrl);
 		Icon icon = new ImageIcon(url);
